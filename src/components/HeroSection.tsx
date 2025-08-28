@@ -12,6 +12,32 @@ import { motion } from "framer-motion";
 function handleSendMail() {
   window.location.href = "mailto:dtonye338@gmail.com";
 }
+const lines = [
+  {
+    content: (
+      <>
+        <Quote className="inline-block text-[#1F2937] mr-2 wave2" />I am
+        confident that my skills and expertise will be of great value in your
+        company.
+      </>
+    ),
+    delay: 0.8,
+  },
+  {
+    content:
+      "With my extensive experience of about 4 YEARS and a passion for building dynamic and well accessible web pages, I believe I will be",
+    delay: 1.0,
+  },
+  {
+    content: (
+      <>
+        a good fit for the position{" "}
+        <Quote className="inline-block text-[#1F2937] ml-2 wave2" />
+      </>
+    ),
+    delay: 1.2,
+  },
+];
 
 function HeroSection() {
   return (
@@ -32,10 +58,10 @@ function HeroSection() {
 
       {/* HeroSection */}
       {/* TOP SIDE LEFT*/}
-      {/* TOP SIDE LEFT */}
+      {/* TOP SIDE LEFT CARD */}
       <div className="absolute max-w-md top-32 left-6 overflow-x-hidden z-50">
         <motion.div
-          className="text-white bg-[#1F2937] rounded-md p-5 space-y-4 shadow-xl shadow-[#1F2937]/50"
+          className=" text-white bg-[#1F2937] rounded-md p-5 space-y-4 shadow-xl shadow-[#1F2937]/50 "
           initial={{ x: -450, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -57,23 +83,23 @@ function HeroSection() {
         </motion.div>
       </div>
 
-      {/* BOTTOM LEFT SIDE */}
+      {/* BOTTOM LEFT SIDE BUTTONS*/}
       <section className="hidden lg:inline absolute top-112 left-36 flex space-x-4 z-50">
         <Button
           variant="default"
-          className="cursor-pointer bg-[#1F2937] rounded-full text-white shadow-xl hover:shadow-[#1F2937]/50"
+          className="scale-up cursor-pointer bg-[#1F2937] rounded-full text-white shadow-xl hover:shadow-[#1F2937]/50"
         >
           <FiGithub className="inline-block text-white" />
         </Button>
         <Button
           variant="default"
-          className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
+          className="scale-up cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
         >
           <LuLinkedin className="inline-block text-white" />
         </Button>{" "}
         <Button
           variant="default"
-          className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
+          className="scale-up cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
           onClick={handleSendMail}
         >
           <Mail className="inline-block text-white h-24 w-24" />
@@ -81,14 +107,28 @@ function HeroSection() {
       </section>
       {/* TOP RIGHT SIDE */}
       <section className="hidden lg:block absolute top-70 right-12 max-w-sm space-y-4 z-50 ">
-        <p className="text-md text-[#1F2937] font-normal leading-6">
-          <Quote className="inline-block text-[#1F2937] mr-2" />I am confident
-          that my skills and expertise will be of great value in your company.
-          With my extensive experience of about 4 YEARS and a passion for
-          building dynamic and well accessible web pages, I believe I will be a
-          good fit for the position{" "}
-          <Quote className="inline-block text-[#1F2937] ml-2" />
-        </p>
+        <div className="overflow-y-hidden text-center">
+          <motion.div className="text-md text-[#1F2937] dark:text-gray-300 font-normal leading-5 space-y-2 ">
+            {lines.map((line, index) => (
+              <motion.p
+                key={index}
+                className="text-md text-[#1F2937] dark:text-gray-300"
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  y: { duration: 1.2, ease: "easeInOut", delay: line.delay },
+                  opacity: {
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    delay: line.delay,
+                  },
+                }}
+              >
+                {line.content}
+              </motion.p>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       {/* BOTTOM RIGHT SIDE */}
@@ -105,23 +145,29 @@ function HeroSection() {
               repeatType: "reverse",
             }}
           >
-            <MessageSquareMore className="inline-block text-[#9CA3AF] mr-2 text-sm" />
+            <MessageSquareMore
+              className="inline-block text-[#9CA3AF] mr-2 text-sm"
+              style={{ height: "18px", width: "18px" }}
+            />
             Get In Touch{" "}
           </motion.div>
         </div>
         <div className="overflow-x-hidden">
           <motion.div
-            className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 px-3 py-2 rounded-md text-sm w-full h-full"
+            className="flex justify-between cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 px-3 py-2 rounded-md text-sm w-full h-full"
             initial={{ x: 150, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{
-              x: { duration: 1.6, ease: "easeInOut", delay: 0.8 },
-              opacity: { duration: 1.6, ease: "easeInOut", delay: 0.8 },
+              x: { duration: 1.6, ease: "easeIn", delay: 0.8 },
+              opacity: { duration: 1.6, ease: "easeIn", delay: 0.8 },
               repeat: Infinity,
               repeatType: "reverse",
             }}
           >
-            <ExternalLink className="inline-block text-[#9CA3AF] mr-2 text-sm" />
+            <ExternalLink
+              className="inline-block text-[#9CA3AF] mr-2 text-sm"
+              style={{ height: "18px", width: "18px" }}
+            />
             View Projects{" "}
           </motion.div>
         </div>
@@ -131,7 +177,7 @@ function HeroSection() {
         {/* BACK SIDE */}
         <img
           src="hero-img.png"
-          alt="Decorative"
+          alt="Hero Image"
           className=" absolute top-18 left-34 rounded-full w-[600px] h-[600px] object-cover mx-auto inset-0 z-0"
         />
       </section>
