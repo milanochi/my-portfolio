@@ -37,7 +37,7 @@
 .wave {
   display: inline-block;
   animation: wave 1.5s infinite;
-  animation-delay: 10s;
+  animation-delay: 0.9s;
   transform-origin: 70% 70%;
 }
 .glass {
