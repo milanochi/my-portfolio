@@ -108,18 +108,22 @@ function HeroSection() {
       {/* TOP RIGHT SIDE */}
       <section className="hidden lg:block absolute top-70 right-12 max-w-sm space-y-4 z-50 ">
         <div className="overflow-y-hidden text-center">
-          <motion.div className="text-md text-[#1F2937] dark:text-gray-300 font-normal leading-5 space-y-2 ">
+          <motion.div className="text-md text-[#1F2937] dark:text-gray-300 font-normal  space-y-2 ">
             {lines.map((line, index) => (
               <motion.p
                 key={index}
-                className="text-md text-[#1F2937] dark:text-gray-300"
-                initial={{ y: 100, opacity: 0 }}
+                className="text-md text-[#1F2937] dark:text-gray-300 leading-6"
+                initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
-                  y: { duration: 1.2, ease: "easeInOut", delay: line.delay },
+                  y: {
+                    duration: 1.5,
+                    ease: [0.22, 1, 0.22, 1],
+                    delay: line.delay,
+                  },
                   opacity: {
-                    duration: 1.2,
-                    ease: "easeInOut",
+                    duration: 2,
+                    ease: [0.22, 1, 0.22, 1],
                     delay: line.delay,
                   },
                 }}
@@ -175,10 +179,16 @@ function HeroSection() {
 
       <section className="w-full max-w-6xl px-6 md:px-12 lg:px-24 py-12">
         {/* BACK SIDE */}
-        <img
+        <motion.img
           src="hero-img.png"
           alt="Hero Image"
-          className=" absolute top-18 left-34 rounded-full w-[600px] h-[600px] object-cover mx-auto inset-0 z-0"
+          className="absolute top-18 left-34 rounded-full w-[600px] h-[600px] object-cover mx-auto inset-0 z-0"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            y: { duration: 1.2, ease: "easeOut", delay: 0.2 },
+            opacity: { duration: 1.2, delay: 0.2 },
+          }}
         />
       </section>
     </section>
