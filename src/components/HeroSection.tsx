@@ -179,16 +179,10 @@ function HeroSection() {
 
       <section className="w-full max-w-6xl px-6 md:px-12 lg:px-24 py-12">
         {/* BACK SIDE */}
-        <motion.img
+        <img
           src="hero-img.png"
           alt="Hero Image"
           className="absolute top-18 left-34 rounded-full w-[600px] h-[600px] object-cover mx-auto inset-0 z-0"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            y: { duration: 1.2, ease: "easeOut", delay: 0.2 },
-            opacity: { duration: 1.2, delay: 0.2 },
-          }}
         />
       </section>
     </section>
