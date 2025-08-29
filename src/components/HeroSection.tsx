@@ -62,11 +62,10 @@ function HeroSection() {
       <div className="absolute max-w-md top-32 left-6 overflow-x-hidden z-50">
         <motion.div
           className=" text-white bg-[#1F2937] rounded-md p-5 space-y-4 shadow-xl shadow-[#1F2937]/50 "
-          initial={{ x: -450, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: -470 }}
+          animate={{ x: 0 }}
           transition={{
             x: { duration: 1.5, ease: "easeInOut", delay: 0.8 },
-            opacity: { duration: 1.5, ease: "easeInOut", delay: 0.8 },
             repeat: Infinity,
             repeatType: "reverse",
           }}
@@ -140,11 +139,10 @@ function HeroSection() {
         <div className="overflow-x-hidden">
           <motion.div
             className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 px-3 py-2 rounded-md text-sm w-full h-full"
-            initial={{ x: 150, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: 150 }}
+            animate={{ x: 0 }}
             transition={{
               x: { duration: 1.6, ease: "easeInOut", delay: 0.8 },
-              opacity: { duration: 1.6, ease: "easeInOut", delay: 0.8 },
               repeat: Infinity,
               repeatType: "reverse",
             }}
@@ -159,11 +157,10 @@ function HeroSection() {
         <div className="overflow-x-hidden">
           <motion.div
             className="flex justify-between cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 px-3 py-2 rounded-md text-sm w-full h-full"
-            initial={{ x: 150, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: 150 }}
+            animate={{ x: 0 }}
             transition={{
               x: { duration: 1.6, ease: "easeIn", delay: 0.8 },
-              opacity: { duration: 1.6, ease: "easeIn", delay: 0.8 },
               repeat: Infinity,
               repeatType: "reverse",
             }}
