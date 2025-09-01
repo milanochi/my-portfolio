@@ -1,13 +1,13 @@
 import { Button } from "./ui/button";
 import "../index.css";
 import NavBar from "./NavBar";
+import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { MessageSquareMore } from "lucide-react";
 import { Quote } from "lucide-react";
 import { Mail } from "lucide-react";
 import { LuLinkedin } from "react-icons/lu";
 import { FiGithub } from "react-icons/fi";
-import { motion } from "framer-motion";
 
 function handleSendMail() {
   window.location.href = "mailto:dtonye338@gmail.com";
@@ -76,8 +76,8 @@ function HeroSection() {
           <h1 className="text-3xl font-bold">Front End Developer</h1>
           <p className="text-md text-[#9CA3AF]">
             Crafting engaging and user-friendly digital experiences. I'll help
-            you build efficient, secure, and scalable websites your users will
-            love.
+            you build efficient, secure, seo-friendly, and scalable websites
+            your users will love.
           </p>
         </motion.div>
       </div>
@@ -112,7 +112,7 @@ function HeroSection() {
               <motion.p
                 key={index}
                 className="text-md text-[#1F2937] dark:text-gray-300 leading-6"
-                initial={{ y: 40, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
                   y: {
@@ -135,10 +135,10 @@ function HeroSection() {
       </section>
 
       {/* BOTTOM RIGHT SIDE */}
-      <section className="absolute top-115 right-20 flex space-x-4 z-50">
+      <section className="absolute top-117 right-25 flex space-x-4 z-50">
         <div className="overflow-x-hidden">
           <motion.div
-            className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 px-3 py-2 rounded-md text-sm w-full h-full"
+            className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 p-3 rounded-md text-sm w-full h-full"
             initial={{ x: 150 }}
             animate={{ x: 0 }}
             transition={{
@@ -156,7 +156,7 @@ function HeroSection() {
         </div>
         <div className="overflow-x-hidden">
           <motion.div
-            className="flex justify-between cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 px-3 py-2 rounded-md text-sm w-full h-full"
+            className="flex justify-between cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 p-3 rounded-md text-sm w-full h-full"
             initial={{ x: 150 }}
             animate={{ x: 0 }}
             transition={{
