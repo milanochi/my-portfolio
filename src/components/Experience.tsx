@@ -1,4 +1,4 @@
-import { FC, useState, useRef } from "react";
+import { type FC, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
