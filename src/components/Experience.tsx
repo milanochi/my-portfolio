@@ -26,25 +26,23 @@ const defaultExperiences: Experience[] = [
     company: "Dinesurf",
     role: "Full Stack Developer at Dinesurf",
     dates: "Feb 2025 - Present",
-    description:
-      "Led the development of scalable web applications using React and TypeScript.",
+    description: "Stack: Vue JS, TypeScript, Laravel & MYSQL.",
     achievements: [
-      "Optimized performance, reducing load times by 40% through code splitting and lazy loading.",
-      "Implemented responsive designs with Tailwind CSS, ensuring cross-device compatibility.",
-      "Collaborated with design teams to integrate shadcn components for a modern UI.",
+      "I was involved in developing a structured system that allows for automated reservations, online ordering, and booking of Events through a secured means of payment.",
+      "I was part of a team that worked on the backend APIs and infrastructure that helps restaurants save on third party fees and enhance guest experience.",
+      "Debugged and fixed an outstanding issue responsible for restricting users from making bookings and payments on the company's website.",
     ],
     skills: ["React", "TypeScript", "Tailwind CSS", "shadcn"],
   },
   {
     company: "Mhino Healthcare",
     role: "Front End Engineer at Mhino",
-    dates: "Jun 2022 - Dec 2025",
-    description:
-      "Led the development of scalable web applications using React and TypeScript.",
+    dates: "Jun 2022 - Dec 2024",
+    description: "Stack: Vue JS, TypeScript",
     achievements: [
-      "Developed a real-time dashboard using Vite for fast builds and hot module replacement.",
-      "Integrated dark mode support with Tailwind CSS variants for enhanced user experience.",
-      "Conducted code reviews and mentored junior developers on best practices.",
+      "Led API integration for core functionalities, including Login, Register, Logout, Forgot Password, Create Password, Email Verifi cation, and Password Confi rmation, ensuring a secure and effi cient user authentication process",
+      "Designed and developed intuitive, multi-page user interfaces for a dynamic website, enhancing user experience and engagement.",
+      "Performed advanced debugging and implemented robust fixes, while integrating secure authentication and cutting-edge security features to safeguard the website.",
     ],
     skills: ["Vite", "React", "TypeScript", "Framer Motion"],
   },
@@ -52,12 +50,11 @@ const defaultExperiences: Experience[] = [
     company: "Mojoy Tech",
     role: "Front End Engineer at Mojoy",
     dates: "April - July 2025",
-    description:
-      "Led the development of scalable web applications using Next JS and TypeScript.",
+    description: "Stack: Next JS, TypeScript",
     achievements: [
-      "Developed a real-time dashboard using Vite for fast builds and hot module replacement.",
-      "Integrated dark mode support with Tailwind CSS variants for enhanced user experience.",
-      "Conducted code reviews and mentored junior developers on best practices.",
+      "Built a responsive full-stack E-commerce IT solutions platform using Next.js, SEO-optimized platform, integrating Sanity as the headless CMS to manage product and wishlist data, ensuring a scalable and dynamic content management system.",
+      "Designed and implemented a wishlist feature with REST API, enabling users to manage wishlist, authenticated via NextAuth.js.",
+      "Optimized (Amazon)AWS SES email delivery, resolved port 587 issues in production, ensuring reliable transactional emails .",
     ],
     skills: ["Vite", "React", "TypeScript", "Framer Motion"],
   },
@@ -73,7 +70,8 @@ const Experience: FC<ExperienceSectionProps> = ({
 
   return (
     <section
-      className="relative bg-[#111827] w-full min-h-[400px] mx-auto py-4"
+      className="relative bg-[#111827] w-full md:h-screen mx-auto py-6"
+      id="experience"
       ref={ref}
     >
       <div className="max-w-6xl mx-auto">

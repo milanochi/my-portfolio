@@ -2,16 +2,19 @@ import { Button } from "./ui/button";
 import "../index.css";
 import NavBar from "./NavBar";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
 import { MessageSquareMore } from "lucide-react";
 import { Quote } from "lucide-react";
 import { Mail } from "lucide-react";
 import { LuLinkedin } from "react-icons/lu";
 import { FiGithub } from "react-icons/fi";
+import ResumeButton from "./ResumeButton";
 
-function handleSendMail() {
-  window.location.href = "mailto:dtonye338@gmail.com";
-}
+const handleSendMail = () => {
+  const email = "dtonye338@gmail.com";
+  navigator.clipboard.writeText(email);
+  alert("Email copied to clipboard!");
+  return;
+};
 const lines = [
   {
     content: (
@@ -41,20 +44,20 @@ const lines = [
 
 function HeroSection() {
   return (
-    <section className="overflow-hidden relative min-h-screen gradient-bg text-center px-6 ">
+    <section
+      className="overflow-hidden relative min-h-screen gradient-bg text-center px-6"
+      id="home"
+    >
       <h1 className="absolute top-3 left-6 p-3 flex items-center text-white text-xl font-bold">
         ødaton.dev
       </h1>
       <NavBar />
       {/*RIGHT NAV SIDE */}
-      <section className="hidden lg:block absolute top-6 right-6 z-0">
-        <Button
-          variant="default"
-          className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50"
-        >
-          Get Started
-        </Button>
-      </section>
+      <div className="cursor-pointer flex justify-end w-[180px] w-full -mt-12 z-[9999]">
+        <div className="cursor-pointer ">
+          <ResumeButton />
+        </div>
+      </div>
 
       {/* HeroSection */}
       {/* TOP SIDE LEFT*/}
@@ -85,29 +88,45 @@ function HeroSection() {
       {/* BOTTOM LEFT SIDE BUTTONS*/}
       <section className="hidden lg:inline absolute top-112 left-36 flex space-x-4 z-50">
         <Button
+          onClick={handleSendMail}
+          variant="default"
+          className="scale-up cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
+        >
+          <Mail className="inline-block text-white h-24 w-24" />
+        </Button>
+        <Button
+          asChild
           variant="default"
           className="scale-up cursor-pointer bg-[#1F2937] rounded-full text-white shadow-xl hover:shadow-[#1F2937]/50"
         >
-          <FiGithub className="inline-block text-white" />
+          <a
+            href="https://github.com/milanochi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FiGithub className="inline-block text-white" />
+          </a>
         </Button>
         <Button
+          asChild
           variant="default"
           className="scale-up cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
         >
-          <LuLinkedin className="inline-block text-white" />
-        </Button>{" "}
-        <Button
-          variant="default"
-          className="scale-up cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 rounded-full"
-          onClick={handleSendMail}
-        >
-          <Mail className="inline-block text-white h-24 w-24" />
+          <a
+            href="https://www.linkedin.com/in/daniel-ochi-4ab514316/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <LuLinkedin className="inline-block text-white" />
+          </a>
         </Button>
       </section>
       {/* TOP RIGHT SIDE */}
       <section className="hidden lg:block absolute top-70 right-12 max-w-sm space-y-4 z-50 ">
         <div className="overflow-y-hidden text-center">
-          <motion.div className="text-md text-[#1F2937] dark:text-gray-300 font-normal  space-y-2 ">
+          <motion.div className="text-md text-[#1F2937] dark:text-gray-300 font-normal space-y-2 ">
             {lines.map((line, index) => (
               <motion.p
                 key={index}
@@ -137,8 +156,8 @@ function HeroSection() {
       {/* BOTTOM RIGHT SIDE */}
       <section className="absolute top-117 right-25 flex space-x-4 z-50">
         <div className="overflow-x-hidden">
-          <motion.div
-            className="cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 p-3 rounded-md text-sm w-full h-full"
+          <motion.button
+            className="cursor-pointer bg-[#1F2937] text-white hover:bg-black/90 p-3 rounded-md text-sm w-full h-full"
             initial={{ x: 150 }}
             animate={{ x: 0 }}
             transition={{
@@ -151,12 +170,12 @@ function HeroSection() {
               className="inline-block text-[#9CA3AF] mr-2 text-sm"
               style={{ height: "18px", width: "18px" }}
             />
-            Get In Touch{" "}
-          </motion.div>
+            <a href="#contact">Let's Talk</a>
+          </motion.button>
         </div>
         <div className="overflow-x-hidden">
           <motion.div
-            className="flex justify-between cursor-pointer bg-[#1F2937] text-white shadow-xl hover:shadow-[#1F2937]/50 p-3 rounded-md text-sm w-full h-full"
+            className="flex justify-between cursor-pointer bg-[#1F2937] text-white shadow-xl hover:bg-black/90 p-3 rounded-md text-sm w-full h-full"
             initial={{ x: 150 }}
             animate={{ x: 0 }}
             transition={{
@@ -165,11 +184,7 @@ function HeroSection() {
               repeatType: "reverse",
             }}
           >
-            <ExternalLink
-              className="inline-block text-[#9CA3AF] mr-2 text-sm"
-              style={{ height: "18px", width: "18px" }}
-            />
-            View Projects{" "}
+            <ResumeButton />
           </motion.div>
         </div>
       </section>
