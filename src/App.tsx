@@ -1,5 +1,5 @@
 import "./App.css";
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 // import Header from "./components/Header";
 import AboutUs from "./components/AboutUs";
 import { UserContext } from "./contexts/UserContext";
@@ -16,13 +16,7 @@ function App() {
       <UserContext.Provider value={"Ochi Portfolio"}>
         <HeroSection />
         <Projects />
-        <Suspense
-          fallback={
-            <div className="text-center py-16 text-white">Loading...</div>
-          }
-        >
-          <Experience />
-        </Suspense>
+        <Experience />
         <AboutUs />
         <Footer />
       </UserContext.Provider>

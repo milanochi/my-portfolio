@@ -76,7 +76,7 @@ const Experience: FC<ExperienceSectionProps> = ({
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-center py-6 md:py-12">
-          <h1 className="text-white font-bold text-4xl">
+          <h1 className="text-white font-bold text-2xl md:text-4xl">
             Professional Experience
           </h1>{" "}
         </div>

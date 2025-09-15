@@ -16,7 +16,7 @@ const ResumeButton = () => {
         className="inline-block text-[#9CA3AF] mr-2 -mt-1 text-sm"
         style={{ height: "18px", width: "18px" }}
       />
-      Download Resume
+      Resume
     </button>
   );
 };

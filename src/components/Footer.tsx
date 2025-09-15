@@ -15,13 +15,13 @@ const Footer: FC = () => {
   ];
 
   const socialLinks = [
-    { name: "GitHub", href: "https://github.com/your-username", icon: Github },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/your-username",
+      href: "https://www.linkedin.com/in/daniel-ochi-4ab514316/e",
       icon: Linkedin,
     },
-    { name: "Twitter", href: "https://x.com/your-username", icon: Twitter },
+    { name: "GitHub", href: "https://github.com/milanochi", icon: Github },
+    { name: "Twitter", href: "", icon: Twitter },
   ];
 
   return (
@@ -42,6 +42,9 @@ const Footer: FC = () => {
             <h3 className="text-2xl font-bold text-white">Daniel</h3>
             <p className="text-md text-gray-400 dark:text-gray-300 mt-2">
               Crafting engaging and user-friendly digital experiences.
+            </p>
+            <p className="text-md text-gray-400 dark:text-gray-300 mt-2">
+              <span className="text-white">Email:</span> dtonye338@gmail.com
             </p>
           </motion.div>
 

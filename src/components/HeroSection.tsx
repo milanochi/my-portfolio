@@ -45,7 +45,7 @@ const lines = [
 function HeroSection() {
   return (
     <section
-      className="overflow-hidden relative min-h-screen gradient-bg text-center px-6"
+      className="overflow-hidden relative min-h-screen md:min-h-[600px] gradient-bg text-center px-6 w-full"
       id="home"
     >
       <h1 className="absolute top-3 left-6 p-3 flex items-center text-white text-xl font-bold">
@@ -54,15 +54,25 @@ function HeroSection() {
       <NavBar />
       {/*RIGHT NAV SIDE */}
       <div className="cursor-pointer flex justify-end w-[180px] w-full -mt-12 z-[9999]">
-        <div className="cursor-pointer ">
-          <ResumeButton />
+        <div
+          className={`flex items-center gap-2`}
+          role="status"
+          aria-label="Active status"
+        >
+          <span
+            className="h-3 w-3 rounded-full bg-green-300 animate-pulse"
+            aria-hidden="true"
+          />
+          <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+            Available for work{" "}
+          </span>
         </div>
       </div>
 
       {/* HeroSection */}
       {/* TOP SIDE LEFT*/}
       {/* TOP SIDE LEFT CARD */}
-      <div className="absolute max-w-md top-32 left-6 overflow-x-hidden z-50">
+      <div className="absolute max-w-md top-20 md:top-32 left-2 md:left-6 px-2 md:px-0 overflow-x-hidden z-50">
         <motion.div
           className=" text-white bg-[#1F2937] rounded-md p-5 space-y-4 shadow-xl shadow-[#1F2937]/50 "
           initial={{ x: -470 }}
@@ -154,7 +164,7 @@ function HeroSection() {
       </section>
 
       {/* BOTTOM RIGHT SIDE */}
-      <section className="absolute top-117 right-25 flex space-x-4 z-50">
+      <section className="absolute top-180 md:top-125 md:top-117 right-15 md:right-25 flex space-x-6 z-50 ">
         <div className="overflow-x-hidden">
           <motion.button
             className="cursor-pointer bg-[#1F2937] text-white hover:bg-black/90 p-3 rounded-md text-sm w-full h-full"
@@ -194,7 +204,7 @@ function HeroSection() {
         <img
           src="hero-img.png"
           alt="Hero Image"
-          className="absolute top-18 left-34 rounded-full w-[600px] h-[600px] object-cover mx-auto inset-0 z-0"
+          className="absolute top-55 md:top-18 left-18 md:left-34 rounded-full w-[600px] h-[600px] object-cover mx-auto inset-0 z-0"
         />
       </section>
     </section>

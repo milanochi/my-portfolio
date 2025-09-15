@@ -51,7 +51,9 @@ const Projects = () => {
       id="projects"
     >
       <div className="flex items-center justify-center py-12">
-        <h1 className="text-white font-bold text-4xl">My Projects</h1>
+        <h1 className="text-white font-bold text-2xl md:text-4xl">
+          My Projects
+        </h1>
       </div>
 
       {/* CARDS */}
