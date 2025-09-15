@@ -164,7 +164,7 @@ function HeroSection() {
       </section>
 
       {/* BOTTOM RIGHT SIDE */}
-      <section className="absolute top-180 md:top-125 md:top-117 right-15 md:right-25 flex space-x-6 z-50 ">
+      <section className="absolute top-180 md:top-125 md:top-117 right-20 md:right-25 flex space-x-12 md:space-x-6 z-50 ">
         <div className="overflow-x-hidden">
           <motion.button
             className="cursor-pointer bg-[#1F2937] text-white hover:bg-black/90 p-3 rounded-md text-sm w-full h-full"
